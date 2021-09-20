@@ -49,13 +49,13 @@ export class AppComponent {
 		this.initialzeApp();
 
 		// app pause and resume
-		App.addListener('appStateChange', ( {isActive} )=>{
+		App.addListener('appStateChange', ( {isActive} ) => this.zone.run(()=> {
 			if(isActive){
 				this.handleAppResume();
 			}else{
 				this.handleAppPause();
 			}
-		});
+		}));
 	}
 
 	private async initialzeApp(): Promise<void>{
@@ -157,12 +157,10 @@ export class AppComponent {
 				this.componentLoader.clearContainer(this.componentLoader.currentContainer, true);
 			}
 
-			this.zone.run(()=>{
-				this.structure.navigateToRoom(room.name, room.ID, { 
-					name: room.name, ID: room.ID, 
-					UID: room.UID, reload: true,
-					reloadID: this.settings.getUID()
-				});
+			this.structure.navigateToRoom(room.name, room.ID, { 
+				name: room.name, ID: room.ID, 
+				UID: room.UID, reload: true,
+				reloadID: this.settings.getUID()
 			});
 		}
 	}
