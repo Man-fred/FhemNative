@@ -292,8 +292,10 @@ export class FhemService {
 
 	// disconnect
 	public disconnect(keepDevices?: boolean): void {
-		if(this.connected){
+		if(this.socket$){
 			this.socket$.complete();
+			this.connectedSub.next(false);
+			this.connectionInProgress = false;
 			if(!keepDevices){
 				this.devices = [];
 				this.listenDevices = [];
