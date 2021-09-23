@@ -291,11 +291,13 @@ export class FhemService {
 	}
 
 	// disconnect
-	public disconnect(): void {
+	public disconnect(keepDevices?: boolean): void {
 		if(this.connected){
 			this.socket$.complete();
-			this.devices = [];
-			this.listenDevices = [];
+			if(!keepDevices){
+				this.devices = [];
+				this.listenDevices = [];
+			}
 			this.currentProfile = -1;
 			this.toast.addToast(
 				this.translate.instant('GENERAL.FHEM.TITLE'),
@@ -303,6 +305,12 @@ export class FhemService {
 				'error'
 			);
 		}
+	}
+
+	// reconnect
+	public reconnect(): void {
+		this.disconnect(true);
+		this.connectFhem();
 	}
 
 	// get the list of relevant devices
