@@ -68,3 +68,4 @@ firebase.json
 # Electron
 electron-main.js
 electron-main.js.map
+/nbproject/

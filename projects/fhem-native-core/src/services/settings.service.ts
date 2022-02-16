@@ -3,12 +3,13 @@ import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 
 // Font Awesome Icons
-import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
-import { 
+import { FontAwesomeModule, FaIconLibrary } from '@fortawesome/angular-fontawesome';
+
+import {
 	faEllipsisH, faAngleDoubleDown, faAngleDoubleUp, faAngleDoubleLeft, faAngleDoubleRight,
 	faBath, faBus, faCalendar, faCalendarAlt, faCalendarCheck, faDoorOpen, faDoorClosed,
 	faFan, faLightbulb, faThermometerEmpty, faThermometerHalf, faThermometerFull,
-	faTemperatureLow, faTemperatureHigh, faWindowRestore, faClipboardCheck, faClipboard, 
+	faTemperatureLow, faTemperatureHigh, faWindowRestore, faClipboardCheck, faClipboard,
 	faClipboardList, faPaste, faObjectGroup, faObjectUngroup, faFileExport, faFileImport,
 	faDog, faPaw, faBone, faPlug, faSolarPanel, faLeaf, faSeedling, faWater, faFaucet, faSwimmingPool, faShower,
 	faTint, faPaperPlane
