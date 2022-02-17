@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /android
+/ios
 /release
 /.gradle
 # Only exists if Bazel was run
@@ -37,6 +38,7 @@ speed-measure-plugin*.json
 .settings/
 *.sublime-workspace
 .editconfig
+/nbproject/
 
 # IDE - VSCode
 .vscode/*
@@ -68,4 +70,3 @@ firebase.json
 # Electron
 electron-main.js
 electron-main.js.map
-/nbproject/

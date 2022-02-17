@@ -45,7 +45,13 @@
 								"glob": "**/*.png",
 								"input": "projects/fhem-native-core/assets/img",
 								"output": "./assets/img"
-							}
+							},
+							{
+								"glob": "**/*.png",
+								"input": "projects/fhem-native-mobile/src/assets/icons",
+								"output": "./assets/icons"
+							},
+							"projects/fhem-native-mobile/src/manifest.webmanifest"
 						],
 						"styles": [
 							"projects/fhem-native-core/src/styles.scss",
@@ -81,7 +87,9 @@
 								"input": "node_modules/@ionic/angular/css/flex-utils.css"
 							}
 						],
-						"scripts": []
+						"scripts": [],
+						"serviceWorker": true,
+						"ngswConfigPath": "projects/fhem-native-mobile/ngsw-config.json"
 					},
 					"configurations": {
 						"production": {
@@ -148,7 +156,8 @@
 								"glob": "**/*.svg",
 								"input": "node_modules/ionicons/dist/ionicons/svg",
 								"output": "./svg"
-							}
+							},
+							"projects/fhem-native-mobile/src/manifest.webmanifest"
 						],
 						"styles": [
 							"projects/fhem-native-core/src/styles.scss"
